@@ -1,0 +1,35 @@
+\doxysection{Field.\+h}
+\hypertarget{_field_8h_source}{}\label{_field_8h_source}\index{src/Field.h@{src/Field.h}}
+\mbox{\hyperlink{_field_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_field_8h_acdf9f5f8475011819f8902fb76141d4e}{AddedResult}}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{_field_8h_acdf9f5f8475011819f8902fb76141d4ead0749aaba8b833466dfcbb0428e4f89c}{SUCCESS}},}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{_field_8h_acdf9f5f8475011819f8902fb76141d4eac2759effffc94bb9acc71d69fe3e8a1f}{FAIL}}}
+\DoxyCodeLine{00008\ \};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_field}{Field}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ add(\textcolor{keywordtype}{char}\ ch,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ size\_;}
+\DoxyCodeLine{00027\ \ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<std::vector<char>>\ field\_;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_field_a92b3c227cc41ab9d8c78c8d53d44f6e1}{is\_someone\_win}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_field}{Field}}(\textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_field_ad8c94c96a637ac0d1158e10b6c056a39}{add\_x}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ y)\ \{\ \textcolor{keywordflow}{return}\ add(\textcolor{charliteral}{'X'},\ x,\ y);\}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_field_abb2e853f82674f1f6642f6e7835c3601}{add\_0}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ y)\{\ \textcolor{keywordflow}{return}\ add(\textcolor{charliteral}{'0'},\ x,\ y);\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ \mbox{\hyperlink{class_field_aaefa48cbe5edc5152960e184be7453cf}{to\_string}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}

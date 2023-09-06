@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_field" xml:lang="en-US">
+<title>Field Class Reference</title>
+<indexterm><primary>Field</primary></indexterm>
+<para>
+
+<para>represent game <link linkend="_class_field">Field</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Field.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_field_1a92b3c227cc41ab9d8c78c8d53d44f6e1">is_someone_win</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_class_field_1ac11ee58ded873f39cdd45901889c763f">Field</link> (int width)</para>
+
+<para>creates new instance of <link linkend="_class_field">Field</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_field_1ad8c94c96a637ac0d1158e10b6c056a39">add_x</link> (const int x, const int y)</para>
+
+<para>adds &apos;x&apos; by passed coords. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_field_1abb2e853f82674f1f6642f6e7835c3601">add_0</link> (const int x, const int y)</para>
+
+<para>adds &apos;0&apos; by passed coords. </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_field_1aaefa48cbe5edc5152960e184be7453cf">to_string</link> () const</para>
+
+<para>represent field_ in single string to display on screen. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>represent game <link linkend="_class_field">Field</link>. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_field_1ac11ee58ded873f39cdd45901889c763f"/><section>
+    <title>Field()</title>
+<indexterm><primary>Field</primary><secondary>Field</secondary></indexterm>
+<indexterm><primary>Field</primary><secondary>Field</secondary></indexterm>
+<para><computeroutput>Field::Field (int width)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>creates new instance of <link linkend="_class_field">Field</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>width</entry><entry>
+<para>width of generated <link linkend="_class_field">Field</link>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_field_1abb2e853f82674f1f6642f6e7835c3601"/><section>
+    <title>add_0()</title>
+<indexterm><primary>add_0</primary><secondary>Field</secondary></indexterm>
+<indexterm><primary>Field</primary><secondary>add_0</secondary></indexterm>
+<para><computeroutput>bool Field::add_0 (const int x, const int y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>adds &apos;0&apos; by passed coords. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>x</entry><entry>
+<para>x coordinate. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>y coordinate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_field_1ad8c94c96a637ac0d1158e10b6c056a39"/><section>
+    <title>add_x()</title>
+<indexterm><primary>add_x</primary><secondary>Field</secondary></indexterm>
+<indexterm><primary>Field</primary><secondary>add_x</secondary></indexterm>
+<para><computeroutput>bool Field::add_x (const int x, const int y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>adds &apos;x&apos; by passed coords. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>x</entry><entry>
+<para>x coordinate. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>y coordinate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_field_1a92b3c227cc41ab9d8c78c8d53d44f6e1"/><section>
+    <title>is_someone_win()</title>
+<indexterm><primary>is_someone_win</primary><secondary>Field</secondary></indexterm>
+<indexterm><primary>Field</primary><secondary>is_someone_win</secondary></indexterm>
+<para><computeroutput>bool Field::is_someone_win ( ) const</computeroutput></para></section>
+<anchor xml:id="_class_field_1aaefa48cbe5edc5152960e184be7453cf"/><section>
+    <title>to_string()</title>
+<indexterm><primary>to_string</primary><secondary>Field</secondary></indexterm>
+<indexterm><primary>Field</primary><secondary>to_string</secondary></indexterm>
+<para><computeroutput>std::string Field::to_string ( ) const</computeroutput></para><para>
+
+<para>represent field_ in single string to display on screen. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>string representation of field_. </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+src/<link linkend="__field_8h">Field.h</link>src/<link linkend="__field_8cpp">Field.cpp</link></section>
+</section>

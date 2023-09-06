@@ -1,0 +1,95 @@
+.TH "Field" 3 "Version 0.0.1" "tic_tac_toe" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Field \- represent game \fBField\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Field\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_someone_win\fP () const"
+.br
+.ti -1c
+.RI "\fBField\fP (int width)"
+.br
+.RI "creates new instance of \fBField\fP\&. "
+.ti -1c
+.RI "bool \fBadd_x\fP (const int x, const int y)"
+.br
+.RI "adds 'x' by passed coords\&. "
+.ti -1c
+.RI "bool \fBadd_0\fP (const int x, const int y)"
+.br
+.RI "adds '0' by passed coords\&. "
+.ti -1c
+.RI "std::string \fBto_string\fP () const"
+.br
+.RI "represent field_ in single string to display on screen\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+represent game \fBField\fP\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Field::Field (int width)\fC [explicit]\fP"
+
+.PP
+creates new instance of \fBField\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP width of generated \fBField\fP\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Field::add_0 (const int x, const int y)\fC [inline]\fP"
+
+.PP
+adds '0' by passed coords\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP x coordinate\&. 
+.br
+\fIy\fP y coordinate\&. 
+.RE
+.PP
+
+.SS "bool Field::add_x (const int x, const int y)\fC [inline]\fP"
+
+.PP
+adds 'x' by passed coords\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP x coordinate\&. 
+.br
+\fIy\fP y coordinate\&. 
+.RE
+.PP
+
+.SS "bool Field::is_someone_win () const"
+
+.SS "std::string Field::to_string () const"
+
+.PP
+represent field_ in single string to display on screen\&. 
+.PP
+\fBReturns\fP
+.RS 4
+string representation of field_\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for tic_tac_toe from the source code\&.
