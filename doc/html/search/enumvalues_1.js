@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['success_0',['SUCCESS',['../_field_8h.html#acdf9f5f8475011819f8902fb76141d4ead0749aaba8b833466dfcbb0428e4f89c',1,'Field.h']]]
+  ['no_5fturns_5fallowed_0',['NO_TURNS_ALLOWED',['../game__field_8h.html#a01fcf24cb43b9070254047494af1197faf0028110cc235ccd7f3072fb1a15d5f1',1,'game_field.h']]]
 ];

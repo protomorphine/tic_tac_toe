@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['addedresult_0',['AddedResult',['../_field_8h.html#acdf9f5f8475011819f8902fb76141d4e',1,'Field.h']]]
+  ['turnresult_0',['TurnResult',['../game__field_8h.html#a01fcf24cb43b9070254047494af1197f',1,'game_field.h']]]
 ];

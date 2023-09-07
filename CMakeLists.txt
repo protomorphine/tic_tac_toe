@@ -6,8 +6,9 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(src)
 
 add_executable(tic_tac_toe
-        src/Field.cpp
-        src/Field.h
+        src/game_field.cc
+        src/game_field.h
         src/tic_tac_toe.cpp
-        src/VectorExtensions.cpp
-        src/VectorExtensions.h)
+        src/vector_extensions.h
+        src/vector_extensions.cc
+)

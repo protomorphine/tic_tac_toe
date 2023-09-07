@@ -1,28 +1,30 @@
-#include "Field.h"
+#include <iostream>
+#include "game_field.h"
 
-#include <algorithm>
+#include "vector_extensions.h"
 
-#include "VectorExtensions.h"
-
-Field::Field(const int width){
-    size_ = width;
-    field_ = std::vector<std::vector<char>>(width, std::vector<char>(width, ' '));
+Field::Field(const int dimension){
+    dimension_ = dimension;
+    field_ = std::vector<char>(dimension_ * dimension_, ' ');
 }
 
-std::string Field::to_string() const{
-    std::string table;
-    
-    for (int chunk_index = 0; chunk_index < size_; ++chunk_index)
-    {
-        const std::string line = VectorExtensions::join(field_[chunk_index], '|', true);
+std::string Field::ToString() const {
 
-        table+= "\t\t";
+    std::string table;
+
+    const std::vector<std::vector<char>> by_chunks = VectorExtensions::Chunks(field_, dimension_);
+
+    for (int chunk_index = 0; chunk_index < by_chunks.size(); ++chunk_index)
+    {
+        const std::string line = VectorExtensions::Join(by_chunks.at(chunk_index), '|');
+
+        table+= "\t";
 
         table += line;
 
-        if (chunk_index != size_ - 1)
+        if (chunk_index != dimension_ - 1)
         {
-            table += "\n\t\t";
+            table += "\n\t";
             table += std::string(line.size(), '-');
             table += '\n';
         }
@@ -31,7 +33,7 @@ std::string Field::to_string() const{
     return table;
 }
 
-bool Field::is_someone_win() const{
+bool Field::IsSomeoneWin() const{
     /*
     const auto size = field_.size();
 
@@ -67,12 +69,21 @@ bool Field::is_someone_win() const{
     return false;
 }
 
-bool Field::add(const char ch, const int x, const int y){
+TurnResult Field::Add(const char ch, const int x, const int y){
 
-    if (x >= size_ || y >= size_ || field_[x][y] != ' ')
-        return false;
+    int allowed_positions = 0;
+    for (char &cell: field_) {
+        if ( cell == ' ' )
+            allowed_positions++;
+    }
+
+    if (allowed_positions == 0)
+        return TurnResult::NO_TURNS_ALLOWED;
+
+    if (x >= dimension_ || y >= dimension_ || field_[y + (dimension_ * x)] != ' ')
+        return TurnResult::INVALID_COORDS;
     
-    field_[x][y] = ch;
+    field_[y + (dimension_ * x)] = ch;
 
-    return true;
+    return TurnResult::SUCCESS_TURN;
 }

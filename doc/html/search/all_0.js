@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['add_5f0_0',['add_0',['../class_field.html#abb2e853f82674f1f6642f6e7835c3601',1,'Field']]],
-  ['add_5fx_1',['add_x',['../class_field.html#ad8c94c96a637ac0d1158e10b6c056a39',1,'Field']]],
-  ['addedresult_2',['AddedResult',['../_field_8h.html#acdf9f5f8475011819f8902fb76141d4e',1,'Field.h']]],
-  ['ai_5fturn_3',['ai_turn',['../tic__tac__toe_8cpp.html#a7a611fee024906c3fb6d329dbc4bb03b',1,'tic_tac_toe.cpp']]]
+  ['addo_0',['AddO',['../class_field.html#abdaa4d3974886eeca14e06328864959a',1,'Field']]],
+  ['addx_1',['AddX',['../class_field.html#a143c223dc4a2979524b9df1dc521cb34',1,'Field']]],
+  ['aiturn_2',['AiTurn',['../tic__tac__toe_8cpp.html#aea21b288ca551eb75bdd628a244f9fc7',1,'tic_tac_toe.cpp']]]
 ];

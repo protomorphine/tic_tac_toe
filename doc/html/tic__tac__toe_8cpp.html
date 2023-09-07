@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>tic_tac_toe: src/tic_tac_toe.cpp File Reference</title>
+<title>tic_tac_toe: D:/Work/tic_tac_toe/src/tic_tac_toe.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,58 +82,51 @@ $(function() {
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;windows.h&gt;</code><br />
 <code>#include &lt;random&gt;</code><br />
-<code>#include &quot;<a class="el" href="_field_8h_source.html">Field.h</a>&quot;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &quot;<a class="el" href="game__field_8h_source.html">game_field.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a66808b9d95315c84953e76646e07527a" id="r_a66808b9d95315c84953e76646e07527a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#a66808b9d95315c84953e76646e07527a">clear_screen</a> (const char fill=' ')</td></tr>
-<tr class="separator:a66808b9d95315c84953e76646e07527a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a611fee024906c3fb6d329dbc4bb03b" id="r_a7a611fee024906c3fb6d329dbc4bb03b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#a7a611fee024906c3fb6d329dbc4bb03b">ai_turn</a> (const int field_width, <a class="el" href="class_field.html">Field</a> &amp;field)</td></tr>
-<tr class="separator:a7a611fee024906c3fb6d329dbc4bb03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1c138ac5dd72aef26eab1702a67c19" id="r_a4d1c138ac5dd72aef26eab1702a67c19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#a4d1c138ac5dd72aef26eab1702a67c19">player_turn</a> (<a class="el" href="class_field.html">Field</a> &amp;field)</td></tr>
-<tr class="separator:a4d1c138ac5dd72aef26eab1702a67c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05291bd4cdcaabbff427a4abc2c67029" id="r_a05291bd4cdcaabbff427a4abc2c67029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#a05291bd4cdcaabbff427a4abc2c67029">tick</a> (<a class="el" href="class_field.html">Field</a> &amp;field)</td></tr>
-<tr class="separator:a05291bd4cdcaabbff427a4abc2c67029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15aca02bd5b0e40ad9ca77cfd1ac0e0" id="r_aa15aca02bd5b0e40ad9ca77cfd1ac0e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#aa15aca02bd5b0e40ad9ca77cfd1ac0e0">ClearScreen</a> (const char fill=' ')</td></tr>
+<tr class="separator:aa15aca02bd5b0e40ad9ca77cfd1ac0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a125e844a753124fdb0970df78f7b025c" id="r_a125e844a753124fdb0970df78f7b025c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#a125e844a753124fdb0970df78f7b025c">UpdateScreen</a> (const <a class="el" href="class_field.html">Field</a> &amp;field)</td></tr>
+<tr class="separator:a125e844a753124fdb0970df78f7b025c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143c04e97083514a5fd38884461a8e3f" id="r_a143c04e97083514a5fd38884461a8e3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#a143c04e97083514a5fd38884461a8e3f">Turn</a> (<a class="el" href="class_field.html">Field</a> &amp;field, const std::function&lt; <a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a>(<a class="el" href="class_field.html">Field</a> &amp;)&gt; &amp;factory)</td></tr>
+<tr class="separator:a143c04e97083514a5fd38884461a8e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea21b288ca551eb75bdd628a244f9fc7" id="r_aea21b288ca551eb75bdd628a244f9fc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#aea21b288ca551eb75bdd628a244f9fc7">AiTurn</a> (<a class="el" href="class_field.html">Field</a> &amp;field)</td></tr>
+<tr class="separator:aea21b288ca551eb75bdd628a244f9fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb8a43d1fbafa8ce6c440a503a70321" id="r_a5cb8a43d1fbafa8ce6c440a503a70321"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#a5cb8a43d1fbafa8ce6c440a503a70321">PlayerTurn</a> (<a class="el" href="class_field.html">Field</a> &amp;field)</td></tr>
+<tr class="separator:a5cb8a43d1fbafa8ce6c440a503a70321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tic__tac__toe_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a7a611fee024906c3fb6d329dbc4bb03b" name="a7a611fee024906c3fb6d329dbc4bb03b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a611fee024906c3fb6d329dbc4bb03b">&#9670;&#160;</a></span>ai_turn()</h2>
+<a id="aea21b288ca551eb75bdd628a244f9fc7" name="aea21b288ca551eb75bdd628a244f9fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea21b288ca551eb75bdd628a244f9fc7">&#9670;&#160;</a></span>AiTurn()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ai_turn </td>
+          <td class="memname"><a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> AiTurn </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>field_width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="class_field.html">Field</a> &amp;&#160;</td>
-          <td class="paramname"><em>field</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>field</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a66808b9d95315c84953e76646e07527a" name="a66808b9d95315c84953e76646e07527a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66808b9d95315c84953e76646e07527a">&#9670;&#160;</a></span>clear_screen()</h2>
+<a id="aa15aca02bd5b0e40ad9ca77cfd1ac0e0" name="aa15aca02bd5b0e40ad9ca77cfd1ac0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15aca02bd5b0e40ad9ca77cfd1ac0e0">&#9670;&#160;</a></span>ClearScreen()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void clear_screen </td>
+          <td class="memname">void ClearScreen </td>
           <td>(</td>
           <td class="paramtype">const char&#160;</td>
           <td class="paramname"><em>fill</em> = <code>'&#160;'</code></td><td>)</td>
@@ -161,14 +154,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d1c138ac5dd72aef26eab1702a67c19" name="a4d1c138ac5dd72aef26eab1702a67c19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d1c138ac5dd72aef26eab1702a67c19">&#9670;&#160;</a></span>player_turn()</h2>
+<a id="a5cb8a43d1fbafa8ce6c440a503a70321" name="a5cb8a43d1fbafa8ce6c440a503a70321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb8a43d1fbafa8ce6c440a503a70321">&#9670;&#160;</a></span>PlayerTurn()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void player_turn </td>
+          <td class="memname"><a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> PlayerTurn </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_field.html">Field</a> &amp;&#160;</td>
           <td class="paramname"><em>field</em></td><td>)</td>
@@ -179,16 +172,44 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a05291bd4cdcaabbff427a4abc2c67029" name="a05291bd4cdcaabbff427a4abc2c67029"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05291bd4cdcaabbff427a4abc2c67029">&#9670;&#160;</a></span>tick()</h2>
+<a id="a143c04e97083514a5fd38884461a8e3f" name="a143c04e97083514a5fd38884461a8e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143c04e97083514a5fd38884461a8e3f">&#9670;&#160;</a></span>Turn()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tick </td>
+          <td class="memname"><a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> Turn </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_field.html">Field</a> &amp;&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; <a class="el" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a>(<a class="el" href="class_field.html">Field</a> &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>factory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a125e844a753124fdb0970df78f7b025c" name="a125e844a753124fdb0970df78f7b025c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125e844a753124fdb0970df78f7b025c">&#9670;&#160;</a></span>UpdateScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UpdateScreen </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_field.html">Field</a> &amp;&#160;</td>
           <td class="paramname"><em>field</em></td><td>)</td>
           <td></td>
         </tr>

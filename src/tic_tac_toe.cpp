@@ -2,65 +2,80 @@
 
 #include <windows.h>
 #include <random>
+#include <functional>
 
-#include "Field.h"
+#include "game_field.h"
 
 using namespace std;
 
-void clear_screen(const char fill = ' '){
-    constexpr COORD tl = {0, 0};
+void ClearScreen(const char fill = ' ') {
+    constexpr COORD tl = { 0 , 0 };
     CONSOLE_SCREEN_BUFFER_INFO s;
     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
-    GetConsoleScreenBufferInfo(console, &s);
+    GetConsoleScreenBufferInfo(console , &s);
     DWORD written;
     const DWORD cells = s.dwSize.X * s.dwSize.Y;
-    FillConsoleOutputCharacter(console, fill, cells, tl, &written);
-    FillConsoleOutputAttribute(console, s.wAttributes, cells, tl, &written);
-    SetConsoleCursorPosition(console, tl);
+    FillConsoleOutputCharacter(console , fill , cells , tl , &written);
+    FillConsoleOutputAttribute(console , s.wAttributes , cells , tl , &written);
+    SetConsoleCursorPosition(console , tl);
 }
 
-void ai_turn(const int field_width, Field& field){
+void UpdateScreen(const Field &field) {
+    ClearScreen();
+    cout << "\t\t\t\ttic_tac_toe game\n\n" << std::endl;
+    cout << field.ToString() + "\n";
+}
+
+TurnResult Turn(Field& field, const std::function<TurnResult(Field&)>& factory) {
+
+    TurnResult result = TurnResult::INVALID_COORDS;
+
+    while (result == TurnResult::INVALID_COORDS) {
+        result = factory(field);
+    }
+
+    return result;
+}
+
+TurnResult AiTurn(Field &field) {
+
     random_device rd;
     mt19937_64 gen(rd());
 
-    uniform_int_distribution<int> rnd(0, field_width);
+    uniform_int_distribution<int> rnd(0, field.dimension());
 
-    bool success = false;
-    
-    while (!success)
-        success = field.add_0(rnd(gen), rnd(gen));
+    return Turn(field, [&](Field &field) {
+        return field.AddO(rnd(gen), rnd(gen));
+    });
 }
 
-void player_turn(Field& field){
-    bool success = false;
-    
-    while (!success)
-    {
+TurnResult PlayerTurn(Field &field) {
+
+    return Turn(field, [](Field &field) {
         int x, y;
-
         cin >> x >> y;
-        success = field.add_x(x - 1, y - 1);
-    }
+        return field.AddX(x - 1, y - 1);
+    });
 }
 
-void tick(Field& field){
-    clear_screen();
-    cout << "\t\t\t\ttic_tac_toe game\n\n" << std::endl;
-    cout << field.to_string() + "\n";
-}
+int main() {
+    const int kDimension = 3;
+    Field field(kDimension);
 
-int main(){
-    constexpr int field_width = 3;
-    Field field(field_width);
+    UpdateScreen(field);
 
-    tick(field);
+    while(!field.IsSomeoneWin()) {
 
-    while (!field.is_someone_win()){
-        player_turn(field);
-        ai_turn(field_width, field);
+        if (PlayerTurn(field) == TurnResult::NO_TURNS_ALLOWED ||
+                AiTurn(field) == TurnResult::NO_TURNS_ALLOWED)
+            break;
 
-        tick(field);
+        UpdateScreen(field);
     }
+
+    UpdateScreen(field);
+
+    cout << "\n\tGAME FINISHED!" << endl;
 
     return 0;
 }

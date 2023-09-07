@@ -2,9 +2,13 @@
 #include <string>
 #include <vector>
 
-enum class AddedResult {
-    SUCCESS,
-    FAIL
+/**
+ * \brief result of players Turn.
+ */
+enum class TurnResult{
+    SUCCESS_TURN = 0,
+    INVALID_COORDS = 1,
+    NO_TURNS_ALLOWED = 2
 };
 
 /**
@@ -14,49 +18,55 @@ class Field
 {
     /**
      * \brief adds passed char to Field.
-     * \param ch char to add.
+     * \param ch char to Add.
      * \param x x coordinate.
      * \param y y coordinate.
      */
-    bool add(char ch, int x, int y);
+    TurnResult Add(char ch, int x, int y);
 
     /**
-     * \brief size of Field.
+     * \brief field dimension.
      */
-    int size_;
+    int dimension_;
  
     /**
      * \brief Field.
      */
-    std::vector<std::vector<char>> field_;
+    std::vector<char> field_;
 
 public:
  
-    bool is_someone_win() const;
+    bool IsSomeoneWin() const;
  
     /**
      * \brief creates new instance of Field.
-     * \param width width of generated Field.
+     * \param dimension dimension of generated Field.
      */
-    explicit Field(int width);
+    explicit Field(int dimension);
 
     /**
      * \brief adds 'x' by passed coords.
      * \param x x coordinate.
      * \param y y coordinate.
      */
-    bool add_x(const int x, const int y) { return add('X', x, y);}
+    TurnResult AddX(const int x, const int y) { return Add('X', x, y);}
 
     /**
      * \brief adds '0' by passed coords.
      * \param x x coordinate.
      * \param y y coordinate.
      */
-    bool add_0(const int x, const int y){ return add('0', x, y); }
+    TurnResult AddO(const int x, const int y){ return Add('O', x, y); }
     
     /**
      * \brief represent field_ in single string to display on screen.
      * \return string representation of field_.
      */
-    std::string to_string() const;
+    std::string ToString() const;
+
+    /**
+     * \brief returns field dimension.
+     * \return dimension.
+     */
+    int inline dimension() const { return dimension_; }
 };

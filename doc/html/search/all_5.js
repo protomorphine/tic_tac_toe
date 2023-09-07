@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../tic__tac__toe_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'tic_tac_toe.cpp']]]
+  ['invalid_5fcoords_0',['INVALID_COORDS',['../game__field_8h.html#a01fcf24cb43b9070254047494af1197fad93bbc0205a0b55ae1cc864f3e7984c6',1,'game_field.h']]],
+  ['issomeonewin_1',['IsSomeoneWin',['../class_field.html#a70a308c6bd3d6bc6a5997300405bffbd',1,'Field']]]
 ];
