@@ -25,6 +25,15 @@ class Field
     TurnResult Add(char ch, int x, int y);
 
     /**
+     * \brief checks cells for winner.
+     * \param start start cell.
+     * \param step step.
+     * \param lastValueRatio multiplayer for field dimension, used as last loop value.
+     * \return bool, indicates is someone won on checked cells.
+     */
+    bool Check(int start, int step, int lastValueRatio = 1) const;
+
+    /**
      * \brief field dimension.
      */
     int dimension_;
@@ -35,7 +44,11 @@ class Field
     std::vector<char> field_;
 
 public:
- 
+
+    /**
+     * \brief checks if someone win.
+     * \return bool, indicates is someone win.
+     */
     bool IsSomeoneWin() const;
  
     /**

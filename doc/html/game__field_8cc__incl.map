@@ -1,0 +1,17 @@
+<map id="D:/Work/tic_tac_toe/src/game_field.cc" name="D:/Work/tic_tac_toe/src/game_field.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="79,5,216,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,77,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,51,71,89,68,85,119,46"/>
+<area shape="rect" id="Node000003" href="$game__field_8h.html" title=" " alt="" coords="101,96,195,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,49,150,81,145,81,145,49"/>
+<area shape="rect" id="Node000006" href="$vector__extensions_8h.html" title=" " alt="" coords="220,96,356,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="185,46,255,86,252,91,182,51"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="200,171,253,197"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="163,121,204,159,201,163,160,125"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="120,171,175,197"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="150,123,150,156,145,156,145,123"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="279,125,248,161,244,157,275,121"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="265,126,186,166,184,161,262,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="277,171,355,197"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="295,122,308,156,303,158,290,124"/>
+</map>

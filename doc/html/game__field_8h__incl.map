@@ -1,0 +1,7 @@
+<map id="D:/Work/tic_tac_toe/src/game_field.h" name="D:/Work/tic_tac_toe/src/game_field.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,143,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="9,96,62,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,50,50,84,45,81,62,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="86,96,142,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,47,104,81,99,84,82,50"/>
+</map>

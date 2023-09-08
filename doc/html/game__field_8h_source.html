@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -52,6 +56,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('game__field_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,11 +94,6 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">game_field.h</div></div>
 </div><!--header-->
@@ -99,39 +115,45 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_enumeration" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> Add(<span class="keywordtype">char</span> ch, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> dimension_;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::vector&lt;char&gt; field_;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_field.html#a70a308c6bd3d6bc6a5997300405bffbd">IsSomeoneWin</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> Check(<span class="keywordtype">int</span> start, <span class="keywordtype">int</span> step, <span class="keywordtype">int</span> lastValueRatio = 1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span> dimension_;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_field.html">Field</a>(<span class="keywordtype">int</span> <a class="code hl_function" href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">dimension</a>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_field.html#a143c223dc4a2979524b9df1dc521cb34">   52</a></span>    <a class="code hl_enumeration" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> <a class="code hl_function" href="class_field.html#a143c223dc4a2979524b9df1dc521cb34">AddX</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y) { <span class="keywordflow">return</span> Add(<span class="charliteral">&#39;X&#39;</span>, x, y);}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::vector&lt;char&gt; field_;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_field.html#a70a308c6bd3d6bc6a5997300405bffbd">IsSomeoneWin</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_field.html#abdaa4d3974886eeca14e06328864959a">   59</a></span>    <a class="code hl_enumeration" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> <a class="code hl_function" href="class_field.html#abdaa4d3974886eeca14e06328864959a">AddO</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y){ <span class="keywordflow">return</span> Add(<span class="charliteral">&#39;O&#39;</span>, x, y); }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::string <a class="code hl_function" href="class_field.html#a4d6131d0267304011a152d4c5c20e00a">ToString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_field.html">Field</a>(<span class="keywordtype">int</span> <a class="code hl_function" href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">dimension</a>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_field.html#a143c223dc4a2979524b9df1dc521cb34">   65</a></span>    <a class="code hl_enumeration" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> <a class="code hl_function" href="class_field.html#a143c223dc4a2979524b9df1dc521cb34">AddX</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y) { <span class="keywordflow">return</span> Add(<span class="charliteral">&#39;X&#39;</span>, x, y);}</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">   71</a></span>    <span class="keywordtype">int</span> <span class="keyword">inline</span> <a class="code hl_function" href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">dimension</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> dimension_; }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_field.html#abdaa4d3974886eeca14e06328864959a">   72</a></span>    <a class="code hl_enumeration" href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a> <a class="code hl_function" href="class_field.html#abdaa4d3974886eeca14e06328864959a">AddO</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y){ <span class="keywordflow">return</span> Add(<span class="charliteral">&#39;O&#39;</span>, x, y); }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    std::string <a class="code hl_function" href="class_field.html#a4d6131d0267304011a152d4c5c20e00a">ToString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">   84</a></span>    <span class="keywordtype">int</span> <span class="keyword">inline</span> <a class="code hl_function" href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">dimension</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> dimension_; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
 </div>
 <div class="ttc" id="aclass_field_html"><div class="ttname"><a href="class_field.html">Field</a></div><div class="ttdoc">represent game Field.</div><div class="ttdef"><b>Definition</b> game_field.h:18</div></div>
-<div class="ttc" id="aclass_field_html_a143c223dc4a2979524b9df1dc521cb34"><div class="ttname"><a href="class_field.html#a143c223dc4a2979524b9df1dc521cb34">Field::AddX</a></div><div class="ttdeci">TurnResult AddX(const int x, const int y)</div><div class="ttdoc">adds 'x' by passed coords.</div><div class="ttdef"><b>Definition</b> game_field.h:52</div></div>
+<div class="ttc" id="aclass_field_html_a143c223dc4a2979524b9df1dc521cb34"><div class="ttname"><a href="class_field.html#a143c223dc4a2979524b9df1dc521cb34">Field::AddX</a></div><div class="ttdeci">TurnResult AddX(const int x, const int y)</div><div class="ttdoc">adds 'x' by passed coords.</div><div class="ttdef"><b>Definition</b> game_field.h:65</div></div>
 <div class="ttc" id="aclass_field_html_a4d6131d0267304011a152d4c5c20e00a"><div class="ttname"><a href="class_field.html#a4d6131d0267304011a152d4c5c20e00a">Field::ToString</a></div><div class="ttdeci">std::string ToString() const</div><div class="ttdoc">represent field_ in single string to display on screen.</div><div class="ttdef"><b>Definition</b> game_field.cc:11</div></div>
-<div class="ttc" id="aclass_field_html_a70a308c6bd3d6bc6a5997300405bffbd"><div class="ttname"><a href="class_field.html#a70a308c6bd3d6bc6a5997300405bffbd">Field::IsSomeoneWin</a></div><div class="ttdeci">bool IsSomeoneWin() const</div><div class="ttdef"><b>Definition</b> game_field.cc:36</div></div>
-<div class="ttc" id="aclass_field_html_ab18b561af2361a787ba8bf3d9aafb83d"><div class="ttname"><a href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">Field::dimension</a></div><div class="ttdeci">int dimension() const</div><div class="ttdoc">returns field dimension.</div><div class="ttdef"><b>Definition</b> game_field.h:71</div></div>
-<div class="ttc" id="aclass_field_html_abdaa4d3974886eeca14e06328864959a"><div class="ttname"><a href="class_field.html#abdaa4d3974886eeca14e06328864959a">Field::AddO</a></div><div class="ttdeci">TurnResult AddO(const int x, const int y)</div><div class="ttdoc">adds '0' by passed coords.</div><div class="ttdef"><b>Definition</b> game_field.h:59</div></div>
+<div class="ttc" id="aclass_field_html_a70a308c6bd3d6bc6a5997300405bffbd"><div class="ttname"><a href="class_field.html#a70a308c6bd3d6bc6a5997300405bffbd">Field::IsSomeoneWin</a></div><div class="ttdeci">bool IsSomeoneWin() const</div><div class="ttdoc">checks if someone win.</div><div class="ttdef"><b>Definition</b> game_field.cc:56</div></div>
+<div class="ttc" id="aclass_field_html_ab18b561af2361a787ba8bf3d9aafb83d"><div class="ttname"><a href="class_field.html#ab18b561af2361a787ba8bf3d9aafb83d">Field::dimension</a></div><div class="ttdeci">int dimension() const</div><div class="ttdoc">returns field dimension.</div><div class="ttdef"><b>Definition</b> game_field.h:84</div></div>
+<div class="ttc" id="aclass_field_html_abdaa4d3974886eeca14e06328864959a"><div class="ttname"><a href="class_field.html#abdaa4d3974886eeca14e06328864959a">Field::AddO</a></div><div class="ttdeci">TurnResult AddO(const int x, const int y)</div><div class="ttdoc">adds '0' by passed coords.</div><div class="ttdef"><b>Definition</b> game_field.h:72</div></div>
 <div class="ttc" id="agame__field_8h_html_a01fcf24cb43b9070254047494af1197f"><div class="ttname"><a href="game__field_8h.html#a01fcf24cb43b9070254047494af1197f">TurnResult</a></div><div class="ttdeci">TurnResult</div><div class="ttdoc">result of players Turn.</div><div class="ttdef"><b>Definition</b> game_field.h:8</div></div>
 <div class="ttc" id="agame__field_8h_html_a01fcf24cb43b9070254047494af1197fa90d1d9cb75fce7350c242ddbef95b864"><div class="ttname"><a href="game__field_8h.html#a01fcf24cb43b9070254047494af1197fa90d1d9cb75fce7350c242ddbef95b864">TurnResult::SUCCESS_TURN</a></div><div class="ttdeci">@ SUCCESS_TURN</div></div>
 <div class="ttc" id="agame__field_8h_html_a01fcf24cb43b9070254047494af1197fad93bbc0205a0b55ae1cc864f3e7984c6"><div class="ttname"><a href="game__field_8h.html#a01fcf24cb43b9070254047494af1197fad93bbc0205a0b55ae1cc864f3e7984c6">TurnResult::INVALID_COORDS</a></div><div class="ttdeci">@ INVALID_COORDS</div></div>
 <div class="ttc" id="agame__field_8h_html_a01fcf24cb43b9070254047494af1197faf0028110cc235ccd7f3072fb1a15d5f1"><div class="ttname"><a href="game__field_8h.html#a01fcf24cb43b9070254047494af1197faf0028110cc235ccd7f3072fb1a15d5f1">TurnResult::NO_TURNS_ALLOWED</a></div><div class="ttdeci">@ NO_TURNS_ALLOWED</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="game__field_8h.html">game_field.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

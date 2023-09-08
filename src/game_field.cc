@@ -33,40 +33,40 @@ std::string Field::ToString() const {
     return table;
 }
 
-bool Field::IsSomeoneWin() const{
-    /*
-    const auto size = field_.size();
+bool Field::Check(int start, int step, int lastValueRatio) const {
+    int xCount = 0, oCount = 0;
 
-    std::vector<char> principal_diagonal;
-    for (size_t i = 0; i < size; ++i)
-    {
-        if (field_[i][i] != ' ')
-            principal_diagonal.push_back(field_[i][i]);
+    for (int i = start; i < dimension_ * lastValueRatio; i += step) {
+        switch (field_[i]) {
+            case 'X':
+                xCount++;
+                break;
+            case 'O':
+                oCount++;
+                break;
+        }
     }
 
-    std::sort(principal_diagonal.begin(), principal_diagonal.end());
-    principal_diagonal.erase(std::unique(principal_diagonal.begin(), principal_diagonal.end()), principal_diagonal.end());
-
-    if (principal_diagonal.size() == 1)
+    if (xCount == dimension_ || oCount == dimension_)
         return true;
 
-
-    std::vector<char> secondary_diagonal;
-    size_t k = size - 1;
-    for (size_t i = 0; i < size; i++)
-    {
-        if (field_[i][k] != ' ')
-            secondary_diagonal.push_back(field_[i][k--]);
-    }
-
-    std::sort(secondary_diagonal.begin(), secondary_diagonal.end());
-    secondary_diagonal.erase(std::unique(secondary_diagonal.begin(), secondary_diagonal.end()), secondary_diagonal.end());
-
-    if (secondary_diagonal.size() == 1)
-        return true;
-
-    return false;*/
     return false;
+}
+
+bool Field::IsSomeoneWin() const {
+
+    for (int i = 0; i < dimension_ * dimension_; i += dimension_) {
+        if (Check(i, 1))
+            return true;
+    }
+
+    for (int i = 0; i < dimension_; ++i) {
+        if (Check(i, dimension_, dimension_))
+            return true;
+    }
+
+    return Check(0, dimension_ + 1, dimension_) ||
+            Check(dimension_ - 1, dimension_ - 1, dimension_);
 }
 
 TurnResult Field::Add(const char ch, const int x, const int y){
