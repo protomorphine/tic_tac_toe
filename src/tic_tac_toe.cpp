@@ -2,80 +2,74 @@
 
 #include <windows.h>
 #include <random>
-#include <functional>
 
 #include "game_field.h"
 
-using namespace std;
-
 void ClearScreen(const char fill = ' ') {
-    constexpr COORD tl = { 0 , 0 };
-    CONSOLE_SCREEN_BUFFER_INFO s;
-    HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
-    GetConsoleScreenBufferInfo(console , &s);
-    DWORD written;
-    const DWORD cells = s.dwSize.X * s.dwSize.Y;
-    FillConsoleOutputCharacter(console , fill , cells , tl , &written);
-    FillConsoleOutputAttribute(console , s.wAttributes , cells , tl , &written);
-    SetConsoleCursorPosition(console , tl);
+  constexpr COORD tl = {0, 0};
+  CONSOLE_SCREEN_BUFFER_INFO s;
+  HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+  GetConsoleScreenBufferInfo(console, &s);
+  DWORD written;
+  const DWORD cells = s.dwSize.X * s.dwSize.Y;
+  FillConsoleOutputCharacter(console, fill, cells, tl, &written);
+  FillConsoleOutputAttribute(console, s.wAttributes, cells, tl, &written);
+  SetConsoleCursorPosition(console, tl);
 }
 
-void UpdateScreen(const Field &field) {
-    ClearScreen();
-    cout << "\t\t\t\ttic_tac_toe game\n\n" << std::endl;
-    cout << field.ToString() + "\n";
+void UpdateScreen(const game::Field& field) {
+  ClearScreen();
+  std::cout << "\t\t\t\ttic_tac_toe game\n\n" << std::endl;
+  std::cout << field.ToString() + "\n";
 }
 
-TurnResult Turn(Field& field, const std::function<TurnResult(Field&)>& factory) {
+template <typename Factory>
+game::TurnResult Turn(game::Field& field, const Factory& factory) {
+  game::TurnResult result = game::TurnResult::INVALID_COORDS;
 
-    TurnResult result = TurnResult::INVALID_COORDS;
+  while (result == game::TurnResult::INVALID_COORDS) {
+    result = factory(field);
+  }
 
-    while (result == TurnResult::INVALID_COORDS) {
-        result = factory(field);
-    }
-
-    return result;
+  return result;
 }
 
-TurnResult AiTurn(Field &field) {
+game::TurnResult AiTurn(game::Field& field) {
+  std::random_device rd;
+  std::mt19937_64 gen(rd());
 
-    random_device rd;
-    mt19937_64 gen(rd());
+  std::uniform_int_distribution<int> rnd(0, field.dimension());
 
-    uniform_int_distribution<int> rnd(0, field.dimension());
-
-    return Turn(field, [&](Field &field) {
-        return field.AddO(rnd(gen), rnd(gen));
-    });
+  return Turn(field, [&rnd, &gen](game::Field& f) { return f.AddO(rnd(gen), rnd(gen)); });
 }
 
-TurnResult PlayerTurn(Field &field) {
+game::TurnResult PlayerTurn(game::Field& field) {
+  return Turn(field, [](game::Field& f) {
+    int x;
+    int y;
 
-    return Turn(field, [](Field &field) {
-        int x, y;
-        cin >> x >> y;
-        return field.AddX(x - 1, y - 1);
-    });
+    std::cin >> x >> y;
+    return f.AddX(x - 1, y - 1);
+  });
 }
 
 int main() {
-    const int kDimension = 3;
-    Field field(kDimension);
+  const int kDimension = 3;
+  game::Field field(kDimension);
 
-    UpdateScreen(field);
+  UpdateScreen(field);
 
-    while(!field.IsSomeoneWin()) {
-
-        if (PlayerTurn(field) == TurnResult::NO_TURNS_ALLOWED ||
-                AiTurn(field) == TurnResult::NO_TURNS_ALLOWED)
-            break;
-
-        UpdateScreen(field);
+  while (!field.IsSomeoneWin()) {
+    if (PlayerTurn(field) == game::TurnResult::NO_TURNS_ALLOWED ||
+        AiTurn(field) == game::TurnResult::NO_TURNS_ALLOWED) {
+      break;
     }
-
     UpdateScreen(field);
+  }
 
-    cout << "\n\tGAME FINISHED!" << endl;
+  UpdateScreen(field);
 
-    return 0;
+  std::cout << "\n\tGAME FINISHED!" << std::endl;
+
+  return 0;
 }

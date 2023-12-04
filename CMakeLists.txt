@@ -10,5 +10,4 @@ add_executable(tic_tac_toe
         src/game_field.h
         src/tic_tac_toe.cpp
         src/vector_extensions.h
-        src/vector_extensions.cc
 )
