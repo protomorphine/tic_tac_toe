@@ -35,6 +35,9 @@ class Field {
    */
   int dimension_;
 
+  /// @brief cell delimiter
+  static const std::string cell_delimiter_;
+
   /**
    * \brief Field.
    */

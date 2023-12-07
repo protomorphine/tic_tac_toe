@@ -14,7 +14,7 @@ class VectorExtensions {
   /**
    * \brief separate vector by Chunks.
    * \param vec vector.
-   * \param chunk_length chunk length.
+   * \param kChunkLength chunk length.
    * \return vector, separated by chunks.
    */
   template <typename T>
@@ -44,9 +44,15 @@ class VectorExtensions {
    * \return string.
    */
   static std::string Join(const std::vector<char>& vec, const std::string& delimiter) {
+    auto iter = vec.cbegin();
     std::stringstream s;
+
+    while (iter < vec.cend()) {
+      s << delimiter << *iter;
+      ++iter;
+    }
+
     s << delimiter;
-    std::copy(vec.begin(), vec.end(), std::ostream_iterator<char>(s, delimiter.c_str()));
 
     return s.str();
   }
